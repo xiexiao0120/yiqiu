@@ -1,0 +1,65 @@
+{
+  "id": "3942890",
+  "name": "摄影公司",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18170926",
+      "name": "房子,屋子,小屋",
+      "font_class": "house-full",
+      "unicode": "e9ed",
+      "unicode_decimal": 59885
+    },
+    {
+      "icon_id": "840781",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "6844397",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "18165267",
+      "name": "锁,密码,锁定",
+      "font_class": "lock-full",
+      "unicode": "e881",
+      "unicode_decimal": 59521
+    },
+    {
+      "icon_id": "18175747",
+      "name": "圆点",
+      "font_class": "double-circle",
+      "unicode": "ea6c",
+      "unicode_decimal": 60012
+    },
+    {
+      "icon_id": "887801",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "630272",
+      "name": "new",
+      "font_class": "new",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "13097463",
+      "name": "三点",
+      "font_class": "sandian",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}
