@@ -7,9 +7,32 @@
       </div>
       <i class="el-icon-refresh-right"></i>
       <div class="date">创建时间：2022-04-16 23:59</div>
-      <div class="p">拍摄时间：2023-09-16</div>
     </div>
     <div class="xx">
+      <ul>
+        <li class="clotheTime">
+          <span>选服时间：</span>
+          <div class="input">
+            <el-date-picker
+            v-model="clotheTime"
+            type="datetime"
+            placeholder="选择日期时间"
+          >
+          </el-date-picker>
+          </div>
+        </li>
+        <li class="clotheTime">
+          <span>拍摄时间：</span>
+          <div class="input">
+            <el-date-picker
+            v-model="photoTime"
+            type="datetime"
+            placeholder="选择日期时间"
+          >
+          </el-date-picker>
+          </div>
+        </li>
+      </ul>
       <ul>
         <li>
           <span>男方姓名：</span>
@@ -248,7 +271,7 @@
       </div>
     </div>
 
-    <div class="bz">
+    <!-- <div class="bz">
       <span>备注信息：</span>
       <div class="text">
         <el-input
@@ -259,7 +282,7 @@
         >
         </el-input>
       </div>
-    </div>
+    </div> -->
 
     <div class="button">
       <el-button type="success" size="mini">完善订单</el-button>
@@ -278,6 +301,8 @@ export default {
   components: {},
   data() {
     return {
+      clotheTime:'',
+      photoTime:'',
       options: [
         {
           value: "选项1",
@@ -507,7 +532,7 @@ export default {
       width: 230px;
     }
   }
-  .button{
+  .button {
     display: flex;
     justify-content: center;
     border: none;

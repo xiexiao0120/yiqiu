@@ -92,7 +92,7 @@
                 scr="https://gd-hbimg.huaban.com/ba91c4e29e7ce5ead82e6554856201abb6da4705957cc-FNthje_fw240webp"
                 :preview-src-list="['https://gd-hbimg.huaban.com/ba91c4e29e7ce5ead82e6554856201abb6da4705957cc-FNthje_fw240webp']"
               ></el-image> -->
-              <img src="@/assets/img/lol.jpg" alt="" class="image" />
+              <img src="@/assets/img/loginbg.png" alt="" class="image" />
             </template>
           </el-table-column>
           <el-table-column prop="name" label="套系名称"> </el-table-column>

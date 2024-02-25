@@ -5,25 +5,14 @@
     <div class="fgcg">
       <div>风格藏馆</div>
       <ul>
-        <li class="xzla">全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
-        <li>全部展示</li>
+        <li :key="item.id" v-for="(item,index) in tabList" :class="tabIndex==index?'xzla':''" @click="handleTabChange(index)">{{ item.name }}</li>
       </ul>
     </div>
 
     <div class="content">
       <ul>
         <li v-for="(itme, index) in 9" :key="index">
-          <div class="top">
+          <!-- <div class="top">
             <div class="new">
               <i class="iconfont icon-double-circle"></i>
             </div>
@@ -31,7 +20,7 @@
             <div class="d">
               <i class="el-icon-error"></i>
             </div>
-          </div>
+          </div> -->
           <div class="img">
             <img src="@/assets/img/jieh.jpg" alt="" />
           </div>
@@ -51,12 +40,53 @@ import Footers from "../components/Footers.vue";
 
 export default {
   components: { AllNav, Footers },
+  data(){
+    return{
+      tabList:[{
+        id:1,
+        name:'全部展示'
+      },
+      {
+        id:2,
+        name:'时尚都市'
+      },
+      {
+        id:3,
+        name:'唯美韩式'
+      },
+      {
+        id:4,
+        name:'国风系列'
+      },
+      {
+        id:5,
+        name:'时尚都市'
+      },
+      {
+        id:7,
+        name:'唯美韩式'
+      },
+      {
+        id:8,
+        name:'国风系列'
+      },
+    ],
+    tabIndex:0,
+    }
+  },
+  methods:{
+    handleTabChange(index){
+      this.tabIndex = index;
+    }
+  }
 };
 </script>
 
 <style scoped lang="less">
 .series {
   .fgcg {
+    width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     background: #fff;
@@ -69,7 +99,7 @@ export default {
       // font-weight: bold;
     }
     ul {
-      width: 1250px;
+      // width: 1250px;
       height: 32px;
       line-height: 32px;
       display: flex;
@@ -79,7 +109,8 @@ export default {
       background-color: rgba(255, 255, 255, 1);
       border: 1px solid rgba(0, 184, 144, 1);
       li {
-        flex: 1;
+        width: 150px;
+        // flex: 1;
         text-align: center;
         border-right: 1px solid rgba(0, 184, 144, 1);
         cursor: pointer;
@@ -95,6 +126,8 @@ export default {
   }
 
   .content {
+    width: 1440px;
+    margin: 0 auto;
     padding: 20px 7px;
     background: #fff;
     ul {
@@ -103,7 +136,7 @@ export default {
       justify-content: space-between;
       li {
         width: 469px;
-        height: 390px;
+        height: 350px;
         background-color: rgba(249, 249, 249, 1);
         cursor: pointer;
         margin-bottom: 25px;

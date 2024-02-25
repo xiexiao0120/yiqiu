@@ -103,20 +103,20 @@ const routes = [
           // 概况
           {
             path: '/',
-            name: 'Overview',
-            component: () => import('@/views/Admin/Overview.vue'),
+            name: 'Clothing',
+            component: () => import('@/views/Admin/Clothing.vue'),
           },
-          {
-            path: '/admin/overview',
-            name: 'Overview',
-            component: () => import('@/views/Admin/Overview.vue'),
-          },
-          // 数据可视化
-          {
-            path: '/admin/data_visualization',
-            name: 'DataVisualization',
-            component: () => import('@/views/Admin/DataVisualization.vue'),
-          },
+          // {
+          //   path: '/admin/overview',
+          //   name: 'Overview',
+          //   component: () => import('@/views/Admin/Overview.vue'),
+          // },
+          // // 数据可视化
+          // {
+          //   path: '/admin/data_visualization',
+          //   name: 'DataVisualization',
+          //   component: () => import('@/views/Admin/DataVisualization.vue'),
+          // },
           // 服装管理
           {
             path: '/admin/clothing',
@@ -194,6 +194,12 @@ const routes = [
             path: '/admin/account_setting',
             name: 'AccountSetting',
             component: () => import('@/views/Admin/AccountSetting.vue'),
+          },
+          // 合同操作
+          {
+            path: '/admin/contract_operations',
+            name: 'operations',
+            component: () => import('@/views/Admin/ContractOperations.vue'),
           },
         ]
       },

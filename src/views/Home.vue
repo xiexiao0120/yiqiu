@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="img">
-              <img src="@/assets/img/jieh.jpg" alt="" />
+              <img loading="lazy" src="@/assets/img/jieh.jpg" alt="" />
             </div>
             <div class="t1">&lt; 简爱 &gt;</div>
             <div class="t2">STLEY：广州&bull;天河婚纱照个人</div>
@@ -162,14 +162,14 @@ export default {
           title: "套系活动",
           path: "/chip_select",
         },
-        {
-          title: "在线选片",
-          path: "/online_film_selection",
-        },
-        {
-          title: "服装广场",
-          path: "/clothing_square",
-        },
+        // {
+        //   title: "在线选片",
+        //   path: "/online_film_selection",
+        // },
+        // {
+        //   title: "服装广场",
+        //   path: "/clothing_square",
+        // },
         {
           title: "个人中心",
           path: "/personal_center",
@@ -189,6 +189,9 @@ export default {
     align-items: center;
     justify-content: center;
     background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9;
     .logo {
       width: 100px;
       height: 61px;
@@ -207,6 +210,8 @@ export default {
     }
   }
   .nav_lamp {
+    width: 1440px;
+    margin: 0 auto;
     margin-top: 10px;
     display: flex;
     .nav {
@@ -302,6 +307,8 @@ export default {
   }
 
   .img_list {
+    width: 1440px;
+    margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 40px;
     background: #fff;

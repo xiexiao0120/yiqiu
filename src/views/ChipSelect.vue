@@ -29,6 +29,8 @@ export default {
 
 <style scoped lang="less">
 .content {
+  width: 1440px;
+  margin: 0 auto;
   background: #fff;
   padding: 30px;
   display: flex;

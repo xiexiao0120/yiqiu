@@ -6,7 +6,7 @@
 
 <style lang="less">
 #app {
-  width: 1440px;
+  width: 100%;
   margin: auto;
 }
 // @media all and(max-width:1440px) {

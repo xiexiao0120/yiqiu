@@ -67,14 +67,14 @@ export default {
           title: "套系活动",
           path: "/chip_select",
         },
-        {
-          title: "在线选片",
-          path: "/online_film_selection",
-        },
-        {
-          title: "服装广场",
-          path: "/clothing_square",
-        },
+        // {
+        //   title: "在线选片",
+        //   path: "/online_film_selection",
+        // },
+        // {
+        //   title: "服装广场",
+        //   path: "/clothing_square",
+        // },
         {
           title: "个人中心",
           path: "/personal_center",

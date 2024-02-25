@@ -3,49 +3,366 @@
     <div class="left">
       <div class="name">李天泽</div>
       <ul class="nav">
-        <li class="xz">全部[10]</li>
-        <li>已付[10]</li>
-        <li>未付[10]</li>
+        <li
+          :class="tabIndex == index ? 'xz' : ''"
+          v-for="(item, index) in tabList"
+          :key="item.id"
+          @click="handleTabchange(index)"
+        >
+          {{ item.name }}[0]
+        </li>
       </ul>
       <div class="button">
-        <button>绑定微信</button>
-        <button class="jie" v-if="false">解绑微信</button>
         <button>退出登录</button>
       </div>
     </div>
 
     <div class="right">
-      <div class="con" v-for="i in 3" :key="i">
-        <div class="d">
-          <span>拍摄门店:广州纯色摄影工作室</span>
-          <span>摄影师:周乐心</span>
+      <div class="box">
+        <div class="boxTop">
+          <div class="topLeft">全额订单 ￥4999</div>
+          <div class="topRight">申请退款</div>
         </div>
-        <ul class="u1">
-          <li class="xz">下单</li>
-          <li>支付</li>
-          <li>拍摄</li>
-          <li>修片</li>
-          <li>交付</li>
-          <span class="x"></span>
-        </ul>
-        <ul class="u2">
-          <li class="xzx">继续支付</li>
-          <li>选片</li>
-          <li>底片</li>
-          <li>精修</li>
-          <li>查看订单</li>
-        </ul>
+        <div class="boxMiddle">
+          <div class="middleLeft">
+            <img src="../../assets/img/jieh.jpg" alt="" />
+          </div>
+          <div class="middleRight">
+            <div class="briefTop">
+              <div class="brief">订单简要</div>
+              <div class="brief">查看合同</div>
+            </div>
+            <div class="orderList">
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <!-- 步骤条盒子 -->
+          <div class="steps-box">
+            <!-- 步骤条 -->
+            <div
+              class="Article-steps"
+              :class="stepList.length <= activeIndex ? 'step-over' : ''"
+            >
+              
+              <!-- 每步部分 -->
+              <div style="display: flex;">
+                <span
+                class="step"
+                v-for="(i, index) in stepList"
+                :key="index"
+                :class="
+                  activeIndex == i.stepIndex || i.stepIndex <= activeIndex
+                    ? 'step-active'
+                    : 'step-start'
+                "
+              >
+                <span
+                  class="step-num"
+                  :class="{ active: activeIndex + 1 === i.stepIndex }"
+                >
+                  <span
+                    class="num"
+                    :class="{ active: activeIndex + 1 === i.stepIndex }"
+                    >{{ i.title }}</span
+                  >
+                </span>
+                <div v-if="index!=4" class="line">
+              </div>
+              </span>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="bottomLeft">服务团队</div>
+          <div class="bottomRight">
+            <span class="span"> 选片 </span>
+            <span class="span"> 下载底片 </span>
+            <span class="span"> 下载精修 </span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="boxTop">
+          <div class="topLeft">全额订单 ￥4999</div>
+          <div class="topRight">申请退款</div>
+        </div>
+        <div class="boxMiddle">
+          <div class="middleLeft">
+            <img src="../../assets/img/jieh.jpg" alt="" />
+          </div>
+          <div class="middleRight">
+            <div class="briefTop">
+              <div class="brief">订单简要</div>
+              <div class="brief">查看合同</div>
+            </div>
+            <div class="orderList">
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <!-- 步骤条盒子 -->
+          <div class="steps-box">
+            <!-- 步骤条 -->
+            <div
+              class="Article-steps"
+              :class="stepList.length <= activeIndex ? 'step-over' : ''"
+            >
+              
+              <!-- 每步部分 -->
+              <div style="display: flex;">
+                <span
+                class="step"
+                v-for="(i, index) in stepList"
+                :key="index"
+                :class="
+                  activeIndex == i.stepIndex || i.stepIndex <= activeIndex
+                    ? 'step-active'
+                    : 'step-start'
+                "
+              >
+                <span
+                  class="step-num"
+                  :class="{ active: activeIndex + 1 === i.stepIndex }"
+                >
+                  <span
+                    class="num"
+                    :class="{ active: activeIndex + 1 === i.stepIndex }"
+                    >{{ i.title }}</span
+                  >
+                </span>
+                <div v-if="index!=4" class="line">
+              </div>
+              </span>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="bottomLeft">服务团队</div>
+          <div class="bottomRight">
+            <span class="span"> 选片 </span>
+            <span class="span"> 下载底片 </span>
+            <span class="span"> 下载精修 </span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="boxTop">
+          <div class="topLeft">全额订单 ￥4999</div>
+          <div class="topRight">申请退款</div>
+        </div>
+        <div class="boxMiddle">
+          <div class="middleLeft">
+            <img src="../../assets/img/jieh.jpg" alt="" />
+          </div>
+          <div class="middleRight">
+            <div class="briefTop">
+              <div class="brief">订单简要</div>
+              <div class="brief">查看合同</div>
+            </div>
+            <div class="orderList">
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <!-- 步骤条盒子 -->
+          <div class="steps-box">
+            <!-- 步骤条 -->
+            <div
+              class="Article-steps"
+              :class="stepList.length <= activeIndex ? 'step-over' : ''"
+            >
+              
+              <!-- 每步部分 -->
+              <div style="display: flex;">
+                <span
+                class="step"
+                v-for="(i, index) in stepList"
+                :key="index"
+                :class="
+                  activeIndex == i.stepIndex || i.stepIndex <= activeIndex
+                    ? 'step-active'
+                    : 'step-start'
+                "
+              >
+                <span
+                  class="step-num"
+                  :class="{ active: activeIndex + 1 === i.stepIndex }"
+                >
+                  <span
+                    class="num"
+                    :class="{ active: activeIndex + 1 === i.stepIndex }"
+                    >{{ i.title }}</span
+                  >
+                </span>
+                <div v-if="index!=4" class="line">
+              </div>
+              </span>
+              </div> 
+            </div>
+          </div>
+        </div>        
+        <div class="bottom">
+          <div class="bottomLeft">服务团队</div>
+          <div class="bottomRight">
+            <span class="span"> 选片 </span>
+            <span class="span"> 下载底片 </span>
+            <span class="span"> 下载精修 </span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="boxTop">
+          <div class="topLeft">全额订单 ￥4999</div>
+          <div class="topRight">申请退款</div>
+        </div>
+        <div class="boxMiddle">
+          <div class="middleLeft">
+            <img src="../../assets/img/jieh.jpg" alt="" />
+          </div>
+          <div class="middleRight">
+            <div class="briefTop">
+              <div class="brief">订单简要</div>
+              <div class="brief">查看合同</div>
+            </div>
+            <div class="orderList">
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+              <div class="list">内景X5</div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <!-- 步骤条盒子 -->
+          <div class="steps-box">
+            <!-- 步骤条 -->
+            <div
+              class="Article-steps"
+              :class="stepList.length <= activeIndex ? 'step-over' : ''"
+            >
+              
+              <!-- 每步部分 -->
+              <div style="display: flex;">
+                <span
+                class="step"
+                v-for="(i, index) in stepList"
+                :key="index"
+                :class="
+                  activeIndex == i.stepIndex || i.stepIndex <= activeIndex
+                    ? 'step-active'
+                    : 'step-start'
+                "
+              >
+                <span
+                  class="step-num"
+                  :class="{ active: activeIndex + 1 === i.stepIndex }"
+                >
+                  <span
+                    class="num"
+                    :class="{ active: activeIndex + 1 === i.stepIndex }"
+                    >{{ i.title }}</span
+                  >
+                </span>
+                <div v-if="index!=4" class="line">
+              </div>
+              </span>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="bottomLeft">服务团队</div>
+          <div class="bottomRight">
+            <span class="span"> 选片 </span>
+            <span class="span"> 下载底片 </span>
+            <span class="span"> 下载精修 </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      tabList: [
+        { id: 1, name: "全部" },
+        { id: 2, name: "已付" },
+        { id: 3, name: "未付" },
+      ],
+      tabIndex: 0,
+      activeIndex: 2,
+      //步骤条步数
+      stepList: [
+        {
+          stepIndex: 1,
+          title: "下单",
+        },
+        {
+          stepIndex: 2,
+          title: "排挡",
+        },
+        {
+          stepIndex: 3,
+          title: "拍摄",
+        },
+        {
+          stepIndex: 4,
+          title: "修片",
+        },
+        {
+          stepIndex: 5,
+          title: "交付",
+        },
+      ],
+    };
+  },
+  methods: {
+    handleTabchange(index) {
+      console.log("hfdjfh", index);
+      this.tabIndex = index;
+    },
+  },
+};
 </script>
 
 <style scoped lang="less">
 .customer {
+  width: 1440px;
+  margin: 0 auto;
   display: flex;
   background: #fff;
 }
@@ -100,71 +417,154 @@ export default {};
 }
 
 .right {
-  flex: 1;
-  .con {
-    width: 1200px;
-    height: 210px;
-    border-radius: 5px;
-    border: 1px solid rgba(65, 80, 88, 1);
-    margin: auto;
-    margin-top: 20px;
-    padding: 20px;
-    .d {
-      span {
-        margin-right: 50px;
-        color: rgba(65, 80, 88, 1);
-        font-size: 16px;
-      }
-    }
-    .u1,
-    .u2 {
+  .box {
+    display: inline-block;
+    width: 402px;
+    min-height: 210px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 10px 6px 16px 6px;
+    .boxTop {
       display: flex;
       justify-content: space-between;
-      margin-top: 16px;
-      position: relative;
-      li {
-        // cursor: pointer;
-        width: 200px;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        color: rgba(65, 80, 88, 1);
+      align-items: center;
+      height: 40px;
+      border-bottom: 1px dashed #ccc;
+      padding: 5px;
+      .topLeft {
         font-size: 16px;
-        border: 1px solid rgba(65, 80, 88, 1);
-        border-radius: 25px;
-        position: relative;
-        background: #fff;
-        z-index: 2;
-        &.xz {
-          background-color: rgba(0, 184, 144, 1);
-          color: rgba(255, 255, 255, 1);
-          border: none;
-        }
+        color: #00b890;
       }
-      span.x {
-        display: block;
-        position: absolute;
-        z-index: 0;
-        top: 25px;
-        width: 100%;
-        height: 1px;
-        background-color: #415058;
+      .topRight {
+        color: #919b9e;
+        font-size: 14px;
       }
     }
-    .u2 {
-      margin-top: 30px;
-      > li {
-        width: 200px;
-        height: 50px;
-        border: 1px solid rgba(65, 80, 88, 1);
-        border-radius: 4px;
-        border-radius: 4px;
-        cursor: pointer;
-        &.xzx{
-          border: 1px solid rgba(0, 184, 144, 1);
-          color: rgba(0, 184, 144, 1);
+    .boxMiddle {
+      display: flex;
+      height: 100px;
+      border-bottom: 1px dashed #ccc;
+      padding: 5px;
+      .middleLeft {
+        img {
+          height: 80px;
+          width: 120px;
+          border-radius: 4px;
         }
       }
+      .middleRight {
+        width: 270px;
+        margin-left: 8px;
+        .briefTop {
+          color: #919b9e;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 26px;
+          font-size: 14px;
+          border-bottom: 1px dashed #ccc;
+        }
+        .orderList {
+          height: 190px;
+          overflow: auto;
+          margin-top: 4px;
+          font-size: 12px;
+          .list{
+            display: inline-block;
+            padding: 2px 6px 2px 2px;
+          }
+        }
+        font-size: 14px;
+      }
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-top: 1px dashed #ccc;
+
+      .bottomLeft {
+        color: #000;
+        font-size: 13px;
+      }
+      .bottomRight {
+        color: #000;
+        font-size: 12px;
+        .span{
+          padding-right: 6px;
+        }
+      }
+      height: 40px;
+    }
+  }
+}
+// 步骤条样式
+
+.steps-box {
+  width: 96%;
+  height: 36px;
+  position: relative;
+  top: 8px;
+  font-size: 12px;
+  margin: 0 auto;
+  // <!-- 步骤条背景进度条 -->
+  .line {
+    margin: 0px auto;
+    left: 39px;
+    top: 9px;
+    background: #63d4bb;
+    width: 44px;
+    height: 1px;
+    overflow: hidden;
+    flex-direction: row;
+  }
+  .Article-steps {
+    display: flex;
+    justify-content: space-between;
+    .step {
+      display: flex;
+      align-items: center;
+      .title {
+        font-size: 12px;
+        font-weight: bold;
+        color: #808080;
+        margin-top: 15px;
+        &.active {
+          color: #fff !important;
+          background-color: #00b890;
+        }
+      }
+      .step-num {
+        width: 42px;
+        height: 22px;
+        border-radius: 12px;
+        display: inline-block;
+        line-height: 22px;
+        text-align: center;
+        border: 1px solid;
+        color: #00b890;
+        &.active {
+          color: #fff !important;
+          background: #00b890;
+        }
+        .num {
+          display: inline-block;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  //当前所在位置样式
+  .step-active {
+    .step-num {
+      color: #00b890 !important;
+      .num {
+        color: #00b890 !important;
+      }
+    }
+    .title {
+      color: #00b890 !important;
     }
   }
 }

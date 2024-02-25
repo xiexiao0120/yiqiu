@@ -9,7 +9,7 @@
     </header>
 
     <div class="content_img">
-      <img v-for="i in 3" :key="i" src="@/assets/img/lol.jpg" alt="" />
+      <img v-for="i in 3" :key="i" src="@/assets/img/loginbg.png" alt="" />
     </div>
 
     <!-- 猜你喜欢 -->

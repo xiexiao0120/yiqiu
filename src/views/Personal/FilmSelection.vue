@@ -30,7 +30,7 @@
           indicator-position="none"
         >
           <el-carousel-item v-for="item in 4" :key="item">
-            <img class="img_box" src="@/assets/img/lol.jpg" alt="" />
+            <img class="img_box" src="@/assets/img/loginbg.png" alt="" />
           </el-carousel-item>
         </el-carousel>
       </div>

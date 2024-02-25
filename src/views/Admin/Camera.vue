@@ -20,7 +20,7 @@
 
     <div class="radio">
       <el-radio v-model="radio" label="1">选服时间</el-radio>
-      <el-radio v-model="radio" label="2">拍摄设计</el-radio>
+      <el-radio v-model="radio" label="2">拍摄时间</el-radio>
       |
       <el-radio v-model="radio2" label="1">升序</el-radio>
       <el-radio v-model="radio2" label="2">降序</el-radio>
@@ -56,16 +56,14 @@
         <div class="right">
           <!-- 上传图片 -->
           <el-upload
-            action="https://jsonplaceholder.typicode.com/posts/"
             list-type="picture-card"
             :on-preview="handlePictureCardPreview"
             :on-remove="handleRemove"
             :show-file-list="true"
-            :multiple="true"
             accept=""
             :auto-upload="false"
           >
-            <i class="el-icon-plus"></i>
+            <!-- <i class="el-icon-plus"></i> -->
           </el-upload>
           <el-dialog :visible.sync="dialogVisible">
             <img width="100%" :src="dialogImageUrl" alt="" />

@@ -12,7 +12,7 @@
 
     <div class="content">
       <div class="img" v-for="i in 9" :key="i">
-        <img src="@/assets/img/lol.jpg" alt="" />
+        <img src="@/assets/img/loginbg.png" alt="" />
       </div>
 
       <footers class="footers"></footers>

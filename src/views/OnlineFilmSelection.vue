@@ -39,7 +39,7 @@ export default {
 .cont {
   width: 100%;
   height: 924px;
-  background: url(~@/assets/img/lol.jpg) no-repeat center;
+  background: url(~@/assets/img/loginbg.png) no-repeat center;
   background-size: cover;
   padding-top: 259px;
   .login {

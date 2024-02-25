@@ -95,7 +95,7 @@
       </div>
       <h2>套系介绍</h2>
       <div class="con_img">
-        <img v-for="i in 5" :key="i" src="~@/assets/img/lol.jpg" alt="" />
+        <img v-for="i in 5" :key="i" src="@/assets/img/loginbg.png" alt="" />
       </div>
       <h2>购买须知</h2>
       <div class="content">

@@ -45,8 +45,10 @@ export default {
 .new_arrivals {
   
   .content {
+    width: 1440px;
     padding: 20px 7px;
     background: #fff;
+    margin: 0 auto;
     ul {
       display: flex;
       flex-wrap: wrap;

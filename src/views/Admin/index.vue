@@ -25,16 +25,16 @@ export default {
   data() {
     return {
       navList: [
-        {
-          title: "概况",
-          path: "/overview",
-          icon: "el-icon-eleme",
-        },
-        {
-          title: "数据可视化",
-          path: "/data_visualization",
-          icon: "el-icon-pie-chart",
-        },
+        // {
+        //   title: "概况",
+        //   path: "/overview",
+        //   icon: "el-icon-eleme",
+        // },
+        // {
+        //   title: "数据可视化",
+        //   path: "/data_visualization",
+        //   icon: "el-icon-pie-chart",
+        // },
         {
           title: "服装管理",
           path: "/clothing",
@@ -61,7 +61,7 @@ export default {
           icon: "",
         },
         {
-          title: "部门管理",
+          title: "评级管理",
           path: "/department",
           icon: "",
         },
@@ -71,7 +71,7 @@ export default {
           icon: "",
         },
         {
-          title: "创建管理",
+          title: "创建订单",
           path: "/creation",
           icon: "",
         },
@@ -86,7 +86,7 @@ export default {
           icon: "",
         },
         {
-          title: "主题列表",
+          title: "主题管理",
           path: "/subject_list",
           icon: "",
         },
@@ -98,6 +98,11 @@ export default {
         {
           title: "账号设置",
           path: "/account_setting",
+          icon: "",
+        },
+        {
+          title: "合同操作",
+          path: "/contract_operations",
           icon: "",
         },
       ],

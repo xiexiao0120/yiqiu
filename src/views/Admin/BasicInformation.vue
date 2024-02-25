@@ -69,8 +69,8 @@
     <h3 class="h3">选片功能</h3>
     <div class="box box2">
       <div>
-        <el-checkbox>打乱选片顺序</el-checkbox>
-        <el-checkbox>全屏选片模式</el-checkbox>
+        <el-checkbox>随机模式</el-checkbox>
+        <el-checkbox>汰片模式</el-checkbox>
         <el-checkbox>删图模式选片</el-checkbox>
       </div>
       <div>
@@ -256,24 +256,28 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in classifyTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'classify')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="classifyinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('classify')"
+        @blur="handleInputConfirm('classify')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button
+        v-else
+        class="button-new-tag"
+        size="small"
+        @click="showInput('classify')"
         >+ 新标签</el-button
       >
     </div>
@@ -281,24 +285,28 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in clotheTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'clothe')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="clotheinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('clothe')"
+        @blur="handleInputConfirm('clothe')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button
+        v-else
+        class="button-new-tag"
+        size="small"
+        @click="showInput('clothe')"
         >+ 新标签</el-button
       >
     </div>
@@ -306,24 +314,28 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in baseTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'base')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="baseinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('base')"
+        @blur="handleInputConfirm('base')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button
+        v-else
+        class="button-new-tag"
+        size="small"
+        @click="showInput('base')"
         >+ 新标签</el-button
       >
     </div>
@@ -331,24 +343,24 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in placeTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'place')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="placeinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('place')"
+        @blur="handleInputConfirm('place')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('place')"
         >+ 新标签</el-button
       >
     </div>
@@ -356,24 +368,24 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in typeTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'type')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="typeinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('type')"
+        @blur="handleInputConfirm('type')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('type')"
         >+ 新标签</el-button
       >
     </div>
@@ -381,24 +393,24 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in personalTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'personal')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="personalinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('personal')"
+        @blur="handleInputConfirm('personal')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('personal')"
         >+ 新标签</el-button
       >
     </div>
@@ -406,24 +418,24 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in dapartmentTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'department')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="departmentinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('department')"
+        @blur="handleInputConfirm('department')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('department')"
         >+ 新标签</el-button
       >
     </div>
@@ -431,24 +443,49 @@
     <div class="box box8">
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in levelTags"
         closable
         :disable-transitions="false"
-        @close="handleClose(tag)"
+        @close="handleClose(tag, 'level')"
       >
         {{ tag }}
       </el-tag>
       <el-input
         class="input-new-tag"
-        v-if="inputVisible"
+        v-if="levelinputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter.native="handleInputConfirm('level')"
+        @blur="handleInputConfirm('level')"
       >
       </el-input>
-      <el-button v-else class="button-new-tag" size="small" @click="showInput"
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('level')"
+        >+ 新标签</el-button
+      >
+    </div>
+    <h3 class="h3">出行方式</h3>
+    <div class="box box8">
+      <el-tag
+        :key="tag"
+        v-for="tag in wayTags"
+        closable
+        :disable-transitions="false"
+        @close="handleClose(tag, 'way')"
+      >
+        {{ tag }}
+      </el-tag>
+      <el-input
+        class="input-new-tag"
+        v-if="wayinputVisible"
+        v-model="inputValue"
+        ref="saveTagInput"
+        size="small"
+        @keyup.enter.native="handleInputConfirm('way')"
+        @blur="handleInputConfirm('way')"
+      >
+      </el-input>
+      <el-button v-else class="button-new-tag" size="small" @click="showInput('way')"
         >+ 新标签</el-button
       >
     </div>
@@ -472,15 +509,21 @@
     <div class="box box10">
       <ul>
         <li>摄影师</li>
-        <li v-for="i in 10" :key="i"><el-checkbox>选项{{i}}</el-checkbox></li>
+        <li v-for="i in permissionList" :key="i">
+          <el-checkbox>{{ i.name }}</el-checkbox>
+        </li>
       </ul>
       <ul>
         <li>化妆师</li>
-        <li v-for="i in 10" :key="i"><el-checkbox>选项{{i}}</el-checkbox></li>
+        <li v-for="i in permissionList" :key="i">
+          <el-checkbox>{{ i.name }}</el-checkbox>
+        </li>
       </ul>
       <ul>
         <li>修图师</li>
-        <li v-for="i in 10" :key="i"><el-checkbox>选项{{i}}</el-checkbox></li>
+        <li v-for="i in permissionList" :key="i">
+          <el-checkbox>{{ i.name }}</el-checkbox>
+        </li>
       </ul>
     </div>
   </div>
@@ -495,8 +538,44 @@ export default {
       dialogVisible: false,
       disabled: false,
       radio: "1",
-      dynamicTags: ["标签一", "标签二", "标签三"],
-      inputVisible: false,
+      classifyTags: [],
+      clotheTags: [],
+      baseTags: [],
+      placeTags: [],
+      typeTags: [],
+      personalTags: [],
+      dapartmentTags: [],
+      levelTags: [],
+      wayTags: [],
+      classifyinputVisible: false,
+      clotheinputVisible: false,
+      baseinputVisible: false,
+      placeinputVisible: false,
+      typeinputVisible: false,
+      personalinputVisible: false,
+      departmentinputVisible: false,
+      levelinputVisible: false,
+      wayinputVisible: false,
+      permissionList:[
+       {
+        name:'服装广场',
+       },
+       {
+        name:'选服中心',
+       },
+       {
+        name:'摄控管理',
+       },
+       {
+        name:'创建订单',
+       },
+       {
+        name:'基础信息',
+       },
+       {
+        name:'评级管理',
+       },
+      ],
       inputValue: "",
     };
   },
@@ -512,24 +591,88 @@ export default {
       console.log(file);
     },
     // 标签
-    handleClose(tag) {
-      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+    handleClose(tag, name) {
+      if (name == "classify") {
+        this.classifyTags.splice(this.classifyTags.indexOf(tag), 1);
+      } else if (name == "clothe") {
+        this.clotheTags.splice(this.clotheTags.indexOf(tag), 1);
+      } else if (name == "base") {
+        this.baseTags.splice(this.baseTags.indexOf(tag), 1);
+      } else if (name == "place") {
+        this.placeTags.splice(this.placeTags.indexOf(tag), 1);
+      } else if (name == "type") {
+        this.typeTags.splice(this.typeTags.indexOf(tag), 1);
+      } else if (name == "personal") {
+        this.personalTags.splice(this.personalTags.indexOf(tag), 1);
+      } else if (name == "department") {
+        this.dapartmentTags.splice(this.dapartmentTags.indexOf(tag), 1);
+      } else if (name == "level") {
+        this.levelTags.splice(this.levelTags.indexOf(tag), 1);
+      }else{
+        this.wayTags.splice(this.wayTags.indexOf(tag), 1);
+      }
     },
 
-    showInput() {
-      this.inputVisible = true;
+    showInput(name) {
+      if (name == "classify") {
+        this.classifyinputVisible = true;
+      } else if (name == "clothe") {
+        this.clotheinputVisible = true;
+      } else if (name == "base") {
+        this.baseinputVisible = true;
+      }else if(name=='place'){
+        this.placeinputVisible = true;
+      }else if(name=='type'){
+        this.typeinputVisible = true;
+      }else if(name=='personal'){
+        this.personalinputVisible = true;
+      }else if(name=='department'){
+        this.departmentinputVisible = true;
+      }else if(name=='level'){
+        this.levelinputVisible = true;
+      }else{
+        this.wayinputVisible = true;
+      }
       this.$nextTick((_) => {
         this.$refs.saveTagInput.$refs.input.focus();
       });
     },
 
-    handleInputConfirm() {
+    handleInputConfirm(name) {
+      console.log("kk", name, this.inputValue);
       let inputValue = this.inputValue;
+
       if (inputValue) {
-        this.dynamicTags.push(inputValue);
+        if (name == "classify") {
+          this.classifyTags.push(inputValue);
+          this.classifyinputVisible = false;
+        } else if (name == "clothe") {
+          this.clotheTags.push(inputValue);
+          this.clotheinputVisible = false;
+        } else if (name == "base") {
+          this.baseTags.push(inputValue);
+          this.baseinputVisible = false;
+        } else if (name == "place") {
+          this.placeTags.push(inputValue);
+          this.placeinputVisible = false;
+        } else if (name == "type") {
+          this.typeTags.push(inputValue);
+          this.typeinputVisible = false;
+        } else if (name == "personal") {
+          this.personalTags.push(inputValue);
+          this.personalinputVisible = false;
+        } else if (name == "department") {
+          this.dapartmentTags.push(inputValue);
+          this.departmentinputVisible = false;
+        } else if(name=='level'){
+          this.levelTags.push(inputValue);
+          this.levelinputVisible = false;
+        }else{
+          this.wayTags.push(inputValue);
+          this.wayinputVisible = false;
+        }
+        this.inputValue = "";
       }
-      this.inputVisible = false;
-      this.inputValue = "";
     },
   },
 };
@@ -614,34 +757,34 @@ export default {
       margin-bottom: 10px;
     }
   }
-  .box9{
-    .input{
+  .box9 {
+    .input {
       margin-left: 30px;
       width: 300px;
       margin-bottom: 10px;
-    } 
-    .text{
+    }
+    .text {
       display: flex;
       align-items: flex-end;
       width: 1000px;
-      i{
+      i {
         font-size: 25px;
         margin-right: 5px;
       }
     }
   }
-  .box10{
+  .box10 {
     display: flex;
-    ul{
+    ul {
       margin-right: 10px;
       min-width: 130px;
       background: #fff;
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      li{
+      li {
         margin-bottom: 10px;
-        &:nth-child(1){
+        &:nth-child(1) {
           background: rgb(249, 249, 249);
           text-align: center;
         }

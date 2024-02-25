@@ -1,7 +1,7 @@
 <template>
   <div class="account">
     <div class="box">
-      <div>企业号YQ0001</div>
+      <!-- <div>企业号YQ0001</div>
       <div>
         定义账号
         <div class="input">
@@ -19,7 +19,7 @@
         <div class="input">
           <el-input size="mini" placeholder="数字或字母"></el-input>
         </div>
-      </div>
+      </div> -->
       <div>
         绑定手机
         <div class="input">
@@ -35,12 +35,8 @@
         <el-button type="success" size="mini">绑定</el-button>
       </div>
     </div>
-
-
     <div class="button">
-      <el-button type="success" size="mini">绑定微信</el-button>
       <el-button type="success" size="mini">退出登录</el-button>
-      <el-button type="success" size="mini">切换账号</el-button>
     </div>
   </div>
 </template>
@@ -59,15 +55,13 @@ export default {
 .account {
   font-size: 14px;
   .box{
+    width: 460px;
     padding: 15px;
     border-bottom: 1px solid #ccc;
     .input{
       width: 180px;
       margin-right: 8px;
       margin-left: 5px;
-    }
-    .b{
-      font-weight: bold;
     }
     >div{
       display: flex;
@@ -79,7 +73,7 @@ export default {
   .button::v-deep{
     padding: 15px;
     .el-button{
-      margin-right: 30px;
+      margin-left: 80px;
     }
   }
 }
